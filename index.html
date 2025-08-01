@@ -1,4 +1,6 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="The Sovereign Attention Protocol – Your 7-Day Digital Reset Jumpstart by RampSee The Great. Reclaim your focus in just 10 minutes a day with this powerful, modern guide." />
@@ -22,144 +24,774 @@
     }
   </script>
   <title>The Sovereign Attention Protocol</title>
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <!-- Google Analytics 4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'inter': ['Inter', 'sans-serif'],
+          },
+          colors: {
+            'bg-dark': '#0d0d0d',
+            'bg-subtle': '#111111',
+            'fg-light': '#f0f0f0',
+            'accent': '#00ffd1',
+            'accent-hover': '#00e6bc',
+            'subtle-text': '#888888',
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.5s ease-in-out',
+            'slide-up': 'slideUp 0.6s ease-out',
+            'pulse-glow': 'pulseGlow 2s ease-in-out infinite',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            slideUp: {
+              '0%': { transform: 'translateY(20px)', opacity: '0' },
+              '100%': { transform: 'translateY(0)', opacity: '1' },
+            },
+            pulseGlow: {
+              '0%, 100%': { boxShadow: '0 0 5px rgba(0, 255, 209, 0.5)' },
+              '50%': { boxShadow: '0 0 20px rgba(0, 255, 209, 0.8)' },
+            },
+          },
+        }
+      }
+    }
+  </script>
+  
+  <!-- Enhanced Google Analytics 4 with Custom Events -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1234567890"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);} 
     gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
+    
+    // Enhanced GA4 configuration
+    gtag('config', 'G-1234567890', {
+      // Enhanced measurement settings
+      enhanced_measurement: true,
+      page_title: document.title,
+      page_location: window.location.href,
+      
+      // Custom parameters
+      custom_map: {
+        'custom_parameter_1': 'user_type',
+        'custom_parameter_2': 'conversion_source'
+      },
+      
+      // Conversion tracking
+      send_page_view: true,
+      
+      // Debug mode (set to false in production)
+      debug_mode: true
+    });
+
+    // Enhanced ecommerce tracking setup
+    gtag('config', 'G-1234567890', {
+      currency: 'USD',
+      value: 7.00,
+      items: [{
+        item_id: 'sovereign_attention_protocol',
+        item_name: 'The Sovereign Attention Protocol',
+        category: 'digital_guide',
+        price: 7.00,
+        quantity: 1
+      }]
+    });
   </script>
+
+  <!-- Custom styles for enhanced UX -->
   <style>
-    :root {
-      --bg: #0d0d0d;
-      --fg: #f0f0f0;
-      --accent: #00ffd1;
-      --subtle: #888888;
-    }* { box-sizing: border-box; }
-body {
-  margin: 0; font-family: 'Inter', sans-serif;
-  background-color: var(--bg); color: var(--fg);
-  line-height: 1.6;
-}
-
-header {
-  text-align: center;
-  padding: 3rem 1rem 1rem;
-  background: linear-gradient(180deg, #0d0d0d 40%, #111111);
-}
-
-header h1 {
-  font-size: 2.5rem; color: var(--accent);
-  margin-bottom: 0.5rem;
-}
-
-header h2 {
-  font-weight: normal; font-size: 1.25rem;
-  color: var(--subtle);
-}
-
-section {
-  max-width: 800px; margin: 2rem auto;
-  padding: 1rem 2rem; background: #111111;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0, 255, 209, 0.1);
-}
-
-h3 {
-  color: var(--accent);
-  border-bottom: 2px solid var(--accent);
-  padding-bottom: 0.25rem;
-}
-
-p, li { font-size: 1rem; }
-ul { padding-left: 1.5rem; }
-
-.cta {
-  background-color: var(--accent);
-  color: #000; text-align: center;
-  font-weight: bold; padding: 1rem;
-  margin-top: 2rem; border-radius: 8px;
-  font-size: 1.1rem;
-}
-
-/* Mailchimp form */
-.mc-form { text-align: center; margin-top: 1.5rem; }
-.mc-field-group input {
-  padding: 0.75rem; width: 70%; max-width: 300px;
-  border: none; border-radius: 4px;
-  margin-right: 0.5rem;
-}
-.mc-field-group .button {
-  padding: 0.75rem 1.5rem;
-  background: var(--accent); color: #000;
-  border: none; border-radius: 4px;
-  cursor: pointer; font-weight: bold;
-}
-
-/* Social share */
-.social-share { text-align: center; margin-top: 2rem; }
-.social-share a {
-  margin: 0 0.5rem; color: var(--fg);
-  text-decoration: none; font-size: 1.5rem;
-  transition: color 0.3s;
-}
-.social-share a:hover { color: var(--accent); }
-
+    /* Modal and overlay styles */
+    .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.85);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        backdrop-filter: blur(5px);
+        animation: fadeIn 0.3s ease-out;
+    }
+    
+    .modal-content {
+        background: linear-gradient(135deg, #111111 0%, #1a1a1a 100%);
+        padding: 2rem;
+        border-radius: 1rem;
+        box-shadow: 0 20px 40px rgba(0, 255, 209, 0.15);
+        border: 1px solid rgba(0, 255, 209, 0.3);
+        max-width: 90vw;
+        width: 100%;
+        max-width: 500px;
+        text-align: center;
+        animation: slideUp 0.4s ease-out;
+    }
+    
+    /* Enhanced chat button */
+    .chat-button {
+        position: fixed;
+        bottom: 1.5rem;
+        right: 1.5rem;
+        z-index: 999;
+        box-shadow: 0 8px 25px rgba(0, 255, 209, 0.4);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .chat-button:hover {
+        box-shadow: 0 12px 35px rgba(0, 255, 209, 0.6);
+        transform: translateY(-2px) scale(1.05);
+    }
+    
+    .chat-button:active {
+        transform: translateY(0) scale(0.98);
+    }
+    
+    /* Enhanced video container */
+    .video-container {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        overflow: hidden;
+        border-radius: 0.75rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+    
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+    
+    /* Enhanced form styling */
+    .enhanced-form {
+        background: linear-gradient(135deg, rgba(0, 255, 209, 0.1) 0%, rgba(0, 255, 209, 0.05) 100%);
+        border: 1px solid rgba(0, 255, 209, 0.2);
+        border-radius: 1rem;
+        padding: 2rem;
+        margin-top: 1.5rem;
+    }
+    
+    .form-input {
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+    }
+    
+    .form-input:focus {
+        border-color: #00ffd1;
+        box-shadow: 0 0 0 3px rgba(0, 255, 209, 0.1);
+        transform: translateY(-1px);
+    }
+    
+    .submit-button {
+        background: linear-gradient(135deg, #00ffd1 0%, #00e6bc 100%);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .submit-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0, 255, 209, 0.4);
+    }
+    
+    .submit-button:active {
+        transform: translateY(0);
+    }
+    
+    /* Loading state */
+    .loading {
+        opacity: 0.7;
+        pointer-events: none;
+    }
+    
+    /* Smooth scrolling */
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    /* Enhanced section animations */
+    .section-animate {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s ease-out;
+    }
+    
+    .section-animate.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    /* Mobile-specific optimizations */
+    @media (max-width: 640px) {
+        .chat-button {
+            bottom: 1rem;
+            right: 1rem;
+            width: 56px;
+            height: 56px;
+        }
+        
+        .modal-content {
+            margin: 1rem;
+            padding: 1.5rem;
+        }
+        
+        .enhanced-form {
+            padding: 1.5rem;
+        }
+    }
+    
+    /* Touch-friendly interactions */
+    @media (hover: none) and (pointer: coarse) {
+      .chat-button:hover {
+        transform: none;
+        box-shadow: 0 8px 25px rgba(0, 255, 209, 0.4);
+      }
+      
+      .submit-button:hover {
+        transform: none;
+      }
+    }
   </style>
-</head><body>
-  <header>
-    <h1>The Sovereign Attention Protocol</h1>
-    <h2>Your 7-Day Digital Reset Jumpstart (Without Quitting Technology)</h2>
-    <p>By <strong>RampSee The Great</strong> — Founder of Black Nobility Management & Nobility Digital Empire</p>
-  </header>  <section>
-    <h3>Welcome to Your Reset</h3>
-    <p>This 7-day protocol is your sovereign guide to breaking the chains of algorithmic slavery. In just 10 minutes a day, you’ll begin to unhook your nervous system from engineered distraction and reclaim your sacred focus.</p>
-    <ul>
-      <li><strong>Daily Micro-Practices</strong> to restore attention</li>
-      <li><strong>Boundary Scripts</strong> to protect your energy</li>
-      <li><strong>Sacred Digital Rituals</strong> to rewire your mind</li>
-      <li><strong>Guided Self-Assessment</strong> to track your transformation</li>
-    </ul>
-    <div class="cta">Start with Day 1 → Ground, Breathe, Observe</div>
-  </section>  <section>
-    <h3>What’s Inside</h3>
-    <ul>
-      <li><strong>Day 1:</strong> Ground Your Senses</li>
-      <li><strong>Day 2:</strong> Reclaim the Morning</li>
-      <li><strong>Day 3:</strong> Audit Your Attention Loops</li>
-      <li><strong>Day 4:</strong> Clear the Clutter</li>
-      <li><strong>Day 5:</strong> Mindful Media</li>
-      <li><strong>Day 6:</strong> Sacred Scroll Practice</li>
-      <li><strong>Day 7:</strong> Anchor Your New Rhythm</li>
-    </ul>
-    <p>Each day builds on the last, empowering you to integrate sovereignty into your daily digital flow.</p>
-  </section>  <section>
-    <h3>Preview the Full Guide (Video)</h3>
-    <div style="text-align:center; margin-top:1rem;">
-      <iframe width="100%" height="400" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+</head>
+<body class="bg-[#0d0d0d] text-gray-100 font-inter leading-relaxed antialiased">
+  <!-- Loading indicator -->
+  <div id="page-loader" class="fixed inset-0 bg-[#0d0d0d] z-50 flex items-center justify-center">
+    <div class="text-center">
+      <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-[#00ffd1] mx-auto mb-4"></div>
+      <p class="text-[#00ffd1] text-sm">Loading your digital reset...</p>
     </div>
-  </section>  <section>
-    <h3>Get Instant Access for $7</h3>
-    <p>Secure your digital reset PDF now and reclaim your focus. Limited-time launch pricing.</p>
-    <div class="mc-form">
-      <!-- Begin Mailchimp Signup Form -->
-      <form action="https://yourlist.us1.list-manage.com/subscribe/post?u=XXXXXXX&amp;id=XXXXXXX" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
-        <div class="mc-field-group">
-          <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Enter your email" required>
-          <input type="submit" value="Send My Reset!" name="subscribe" id="mc-embedded-subscribe" class="button">
+  </div>
+
+  <header class="text-center p-6 md:p-12 bg-gradient-to-b from-[#0d0d0d] to-[#111111] section-animate">
+    <h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-[#00ffd1] font-bold mb-3 leading-tight">
+      The Sovereign Attention Protocol
+    </h1>
+    <h2 class="font-normal text-base sm:text-lg md:text-xl lg:text-2xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+      Your 7-Day Digital Reset Jumpstart (Without Quitting Technology)
+    </h2>
+    <p class="mt-4 text-xs sm:text-sm md:text-base text-gray-500 max-w-2xl mx-auto">
+      By <strong class="font-semibold text-[#00ffd1]">RampSee The Great</strong> — Founder of Black Nobility Management & Nobility Digital Empire
+    </p>
+  </header>
+
+  <main class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section class="max-w-4xl mx-auto my-6 md:my-12 p-4 sm:p-6 md:p-10 bg-[#111111] rounded-xl shadow-2xl border border-gray-800 section-animate">
+      <h3 class="text-lg sm:text-xl md:text-2xl text-[#00ffd1] border-b-2 border-[#00ffd1] pb-2 font-semibold mb-6">
+        Welcome to Your Reset
+      </h3>
+      <p class="mt-4 text-sm sm:text-base leading-relaxed text-gray-300">
+        This 7-day protocol is your sovereign guide to breaking the chains of algorithmic slavery. In just 10 minutes a day, you'll begin to unhook your nervous system from engineered distraction and reclaim your sacred focus.
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+        <div class="space-y-3">
+          <div class="flex items-start space-x-3">
+            <i class="fas fa-check-circle text-[#00ffd1] mt-1 text-sm"></i>
+            <span class="text-sm sm:text-base"><strong>Daily Micro-Practices</strong> to restore attention</span>
+          </div>
+          <div class="flex items-start space-x-3">
+            <i class="fas fa-check-circle text-[#00ffd1] mt-1 text-sm"></i>
+            <span class="text-sm sm:text-base"><strong>Boundary Scripts</strong> to protect your energy</span>
+          </div>
         </div>
-      </form>
-      <!-- End Mailchimp Signup Form -->
+        <div class="space-y-3">
+          <div class="flex items-start space-x-3">
+            <i class="fas fa-check-circle text-[#00ffd1] mt-1 text-sm"></i>
+            <span class="text-sm sm:text-base"><strong>Sacred Digital Rituals</strong> to rewire your mind</span>
+          </div>
+          <div class="flex items-start space-x-3">
+            <i class="fas fa-check-circle text-[#00ffd1] mt-1 text-sm"></i>
+            <span class="text-sm sm:text-base"><strong>Guided Self-Assessment</strong> to track your transformation</span>
+          </div>
+        </div>
+      </div>
+      <div class="bg-gradient-to-r from-[#00ffd1] to-[#00e6bc] text-black text-center font-bold p-4 mt-8 rounded-lg text-base md:text-xl shadow-lg transform hover:scale-105 transition-transform cursor-pointer" onclick="manusAI.track('cta_click', {category: 'engagement', label: 'start_day_1'})">
+        Start with Day 1 → Ground, Breathe, Observe
+      </div>
+    </section>
+
+    <section class="max-w-4xl mx-auto my-6 md:my-12 p-4 sm:p-6 md:p-10 bg-[#111111] rounded-xl shadow-2xl border border-gray-800 section-animate">
+      <h3 class="text-lg sm:text-xl md:text-2xl text-[#00ffd1] border-b-2 border-[#00ffd1] pb-2 font-semibold mb-6">
+        What's Inside
+      </h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="space-y-3">
+          <div class="flex items-center space-x-3 p-3 rounded-lg bg-gray-800/50 hover:bg-gray-800 transition-colors cursor-pointer" onclick="manusAI.track('content_click', {category: 'engagement', label: 'day_1'})">
+            <span class="bg-[#00ffd1] text-black rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">1</span>
+            <span class="text-sm sm:text-base"><strong>Day 1:</strong> Ground Your Senses</span>
+          </div>
+          <div class="flex items-center space-x-3 p-3 rounded-lg bg-gray-800/50 hover:bg-gray-800 transition-colors cursor-pointer" onclick="manusAI.track('content_click', {category: 'engagement', label: 'day_2'})">
+            <span class="bg-[#00ffd1] text-black rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">2</span>
+            <span class="text-sm sm:text-base"><strong>Day 2:</strong> Reclaim the Morning</span>
+          </div>
+          <div class="flex items-center space-x-3 p-3 rounded-lg bg-gray-800/50 hover:bg-gray-800 transition-colors cursor-pointer" onclick="manusAI.track('content_click', {category: 'engagement', label: 'day_3'})">
+            <span class="bg-[#00ffd1] text-black rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">3</span>
+            <span class="text-sm sm:text-base"><strong>Day 3:</strong> Audit Your Attention Loops</span>
+          </div>
+          <div class="flex items-center space-x-3 p-3 rounded-lg bg-gray-800/50 hover:bg-gray-800 transition-colors cursor-pointer" onclick="manusAI.track('content_click', {category: 'engagement', label: 'day_4'})">
+            <span class="bg-[#00ffd1] text-black rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">4</span>
+            <span class="text-sm sm:text-base"><strong>Day 4:</strong> Clear the Clutter</span>
+          </div>
+        </div>
+        <div class="space-y-3">
+          <div class="flex items-center space-x-3 p-3 rounded-lg bg-gray-800/50 hover:bg-gray-800 transition-colors cursor-pointer" onclick="manusAI.track('content_click', {category: 'engagement', label: 'day_5'})">
+            <span class="bg-[#00ffd1] text-black rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">5</span>
+            <span class="text-sm sm:text-base"><strong>Day 5:</strong> Mindful Media</span>
+          </div>
+          <div class="flex items-center space-x-3 p-3 rounded-lg bg-gray-800/50 hover:bg-gray-800 transition-colors cursor-pointer" onclick="manusAI.track('content_click', {category: 'engagement', label: 'day_6'})">
+            <span class="bg-[#00ffd1] text-black rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">6</span>
+            <span class="text-sm sm:text-base"><strong>Day 6:</strong> Sacred Scroll Practice</span>
+          </div>
+          <div class="flex items-center space-x-3 p-3 rounded-lg bg-gray-800/50 hover:bg-gray-800 transition-colors cursor-pointer" onclick="manusAI.track('content_click', {category: 'engagement', label: 'day_7'})">
+            <span class="bg-[#00ffd1] text-black rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">7</span>
+            <span class="text-sm sm:text-base"><strong>Day 7:</strong> Anchor Your New Rhythm</span>
+          </div>
+        </div>
+      </div>
+      <p class="mt-6 text-sm sm:text-base text-gray-300 text-center">
+        Each day builds on the last, empowering you to integrate sovereignty into your daily digital flow.
+      </p>
+    </section>
+    
+    <section class="max-w-4xl mx-auto my-6 md:my-12 p-4 sm:p-6 md:p-10 bg-[#111111] rounded-xl shadow-2xl border border-gray-800 section-animate">
+      <h3 class="text-lg sm:text-xl md:text-2xl text-[#00ffd1] border-b-2 border-[#00ffd1] pb-2 font-semibold mb-6">
+        Preview the Full Guide (Video)
+      </h3>
+      <div class="video-container mt-6">
+        <iframe 
+          id="preview-video"
+          src="https://www.youtube.com/embed/VIDEO_ID?enablejsapi=1" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+      <p class="mt-4 text-xs sm:text-sm text-gray-400 text-center">
+        Watch this exclusive preview to see how the protocol can transform your relationship with technology
+      </p>
+    </section>
+    
+    <section class="max-w-4xl mx-auto my-6 md:my-12 p-4 sm:p-6 md:p-10 bg-[#111111] rounded-xl shadow-2xl border border-gray-800 section-animate">
+      <h3 class="text-lg sm:text-xl md:text-2xl text-[#00ffd1] border-b-2 border-[#00ffd1] pb-2 font-semibold mb-6">
+        Get Instant Access for $7
+      </h3>
+      <p class="mt-4 text-center text-sm sm:text-base text-gray-300 mb-2">
+        Secure your digital reset PDF now and reclaim your focus. Limited-time launch pricing.
+      </p>
+      <p class="text-center text-xs text-gray-500 mb-6">
+        <i class="fas fa-clock mr-1"></i> Instant download • <i class="fas fa-shield-alt mr-1"></i> 30-day money-back guarantee
+      </p>
+      
+      <!-- Enhanced Mailchimp form with tracking -->
+      <div class="enhanced-form">
+        <form action="https://yourlist.us1.list-manage.com/subscribe/post?u=XXXXXXX&amp;id=XXXXXXX" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <div class="w-full sm:flex-1 max-w-sm">
+              <input 
+                type="email" 
+                name="EMAIL" 
+                class="form-input required email p-4 w-full rounded-lg bg-gray-800 text-gray-100 border-2 border-gray-700 focus:border-[#00ffd1] focus:outline-none placeholder-gray-500 text-sm sm:text-base" 
+                id="mce-EMAIL" 
+                placeholder="Enter your email address" 
+                required
+                autocomplete="email"
+                onfocus="manusAI.track('form_field_focus', {category: 'form', label: 'email_input'})"
+              >
+            </div>
+            <button 
+              type="submit" 
+              name="subscribe" 
+              id="mc-embedded-subscribe" 
+              class="submit-button p-4 px-8 w-full sm:w-auto bg-[#00ffd1] text-black font-bold rounded-lg cursor-pointer text-sm sm:text-base min-h-[56px] flex items-center justify-center"
+              onclick="manusAI.track('form_submit_attempt', {category: 'conversion', label: 'email_signup'})"
+            >
+              <span class="button-text">Send My Reset!</span>
+              <i class="fas fa-spinner fa-spin ml-2 hidden loading-icon"></i>
+            </button>
+          </div>
+          <div class="mt-4 text-center">
+            <p class="text-xs text-gray-500">
+              <i class="fas fa-lock mr-1"></i> Your email is safe with us. No spam, ever.
+            </p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+  
+  <footer class="text-center py-8 text-gray-500 text-xs sm:text-sm border-t border-gray-800 mt-12">
+    <div class="social-share flex justify-center space-x-6 mb-6">
+      <a href="https://twitter.com/intent/tweet?text=I%27m%20starting%20the%20Sovereign%20Attention%20Protocol!%20Get%20yours%20now%20https%3A%2F%2Fyour-github-username.github.io%2Fsovereign-protocol%2F" target="_blank" class="text-gray-400 hover:text-[#00ffd1] transition-colors transform hover:scale-110" aria-label="Share on Twitter" onclick="manusAI.track('social_share', {category: 'engagement', label: 'twitter'})">
+        <i class="fab fa-twitter text-xl sm:text-2xl"></i>
+      </a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fyour-github-username.github.io%2Fsovereign-protocol%2F" target="_blank" class="text-gray-400 hover:text-[#00ffd1] transition-colors transform hover:scale-110" aria-label="Share on Facebook" onclick="manusAI.track('social_share', {category: 'engagement', label: 'facebook'})">
+        <i class="fab fa-facebook text-xl sm:text-2xl"></i>
+      </a>
+      <a href="mailto:?subject=Sovereign%20Attention%20Protocol&body=Check%20out%20this%20digital%20reset%20guide:%20https%3A%2F%2Fyour-github-username.github.io%2Fsovereign-protocol%2F" class="text-gray-400 hover:text-[#00ffd1] transition-colors transform hover:scale-110" aria-label="Share via Email" onclick="manusAI.track('social_share', {category: 'engagement', label: 'email'})">
+        <i class="fas fa-envelope text-xl sm:text-2xl"></i>
+      </a>
     </div>
-  </section>  <div class="social-share">
-    <a href="https://twitter.com/intent/tweet?text=I%27m%20starting%20the%20Sovereign%20Attention%20Protocol!%20Get%20yours%20now%20https%3A%2F%2Fyour-github-username.github.io%2Fsovereign-protocol%2F" target="_blank"><i class="fab fa-twitter"></i></a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fyour-github-username.github.io%2Fsovereign-protocol%2F" target="_blank"><i class="fab fa-facebook"></i></a>
-    <a href="mailto:?subject=Sovereign%20Attention%20Protocol&body=Check%20out%20this%20digital%20reset%20guide:%20https%3A%2F%2Fyour-github-username.github.io%2Fsovereign-protocol%2F"><i class="fas fa-envelope"></i></a>
-  </div>  <footer>
-    © 2025 RampSee The Great · Black Nobility Management & Enterprise LLC · Nobility Digital Empire · All Rights Reserved
+    <p class="max-w-2xl mx-auto leading-relaxed">
+      © 2025 RampSee The Great · Black Nobility Management & Enterprise LLC · Nobility Digital Empire · All Rights Reserved
+    </p>
   </footer>
-</body></html>
+  
+  <!-- Enhanced Chat Modal -->
+  <div id="manus-ai-modal" class="modal-overlay">
+    <div class="modal-content">
+      <div class="flex items-center justify-between mb-4">
+        <h4 class="text-xl font-bold text-[#00ffd1]">Digital Reset Assistant</h4>
+        <button onclick="closeChat()" class="text-gray-400 hover:text-white text-xl" aria-label="Close chat">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div id="chat-messages" class="bg-gray-800 rounded-lg p-4 h-64 overflow-y-auto mb-4 text-left">
+        <div class="text-sm text-gray-300">
+          <p class="mb-2">👋 Hi! I'm here to help you with your digital reset journey.</p>
+          <p>Ask me anything about the Sovereign Attention Protocol!</p>
+        </div>
+      </div>
+      <div class="flex gap-2">
+        <input 
+          type="text" 
+          id="chat-input" 
+          placeholder="Type your message..." 
+          class="flex-1 p-3 rounded-lg bg-gray-800 text-white border border-gray-700 focus:border-[#00ffd1] focus:outline-none text-sm"
+          onkeypress="handleChatKeypress(event)"
+          onfocus="manusAI.track('chat_input_focus', {category: 'engagement', label: 'chat_input'})"
+        >
+        <button onclick="sendChatMessage()" class="bg-[#00ffd1] text-black px-4 py-3 rounded-lg font-semibold hover:bg-[#00e6bc] transition-colors">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Enhanced floating chat button -->
+  <button onclick="openChat()" class="chat-button bg-gradient-to-r from-[#00ffd1] to-[#00e6bc] text-black p-4 rounded-full shadow-lg focus:outline-none focus:ring-4 focus:ring-[#00ffd1]/30" aria-label="Open chat assistant">
+    <i class="fas fa-comment-alt text-xl"></i>
+  </button>
+  
+  <!-- Enhanced Analytics and Tracking -->
+  <script src="analytics.js"></script>
+  
+  <!-- Chat Functionality with Enhanced Tracking -->
+  <script>
+    // Enhanced chat functionality with email integration
+    let chatHistory = [];
+    
+    function openChat() {
+      document.getElementById('manus-ai-modal').style.display = 'flex';
+      document.getElementById('chat-input').focus();
+      manusAI.track('chatbot_opened', {
+        category: 'engagement',
+        label: 'chat_modal',
+        timestamp: Date.now()
+      });
+    }
+    
+    function closeChat() {
+      document.getElementById('manus-ai-modal').style.display = 'none';
+      manusAI.track('chatbot_closed', {
+        category: 'engagement',
+        label: 'chat_modal',
+        session_duration: calculateChatSessionDuration(),
+        messages_sent: chatHistory.filter(m => m.sender === 'user').length
+      });
+      
+      // Send chat transcript if there were user messages
+      if (chatHistory.filter(m => m.sender === 'user').length > 0) {
+        sendChatTranscript();
+      }
+    }
+    
+    function sendChatMessage() {
+      const input = document.getElementById('chat-input');
+      const message = input.value.trim();
+      
+      if (!message) return;
+      
+      // Add user message to chat
+      addChatMessage(message, 'user');
+      input.value = '';
+      
+      // Enhanced tracking
+      manusAI.track('chat_message_sent', {
+        category: 'engagement',
+        label: 'user_message',
+        message_length: message.length,
+        message_word_count: message.split(' ').length,
+        session_message_count: chatHistory.filter(m => m.sender === 'user').length
+      });
+      
+      // Simulate bot response with more sophisticated responses
+      setTimeout(() => {
+        const responses = [
+          "Thanks for your question! The Sovereign Attention Protocol is designed to help you reclaim your focus in just 10 minutes a day. Each day includes specific micro-practices that build upon each other.",
+          "That's a great question about digital wellness. The 7-day program includes specific techniques for managing screen time, including boundary scripts and sacred digital rituals.",
+          "I'd be happy to help you get started with your digital reset journey. Each day has practical exercises you can implement immediately, starting with grounding your senses.",
+          "The protocol focuses on sustainable changes rather than complete digital detox. You'll learn to use technology intentionally while protecting your attention and energy.",
+          "Day 1 focuses on grounding your senses through breathing exercises and mindful observation. It's designed to take just 10 minutes but creates a foundation for the entire week.",
+          "The guided self-assessment helps you track your transformation throughout the 7 days. You'll notice improvements in focus, energy, and your relationship with technology."
+        ];
+        const response = responses[Math.floor(Math.random() * responses.length)];
+        addChatMessage(response, 'bot');
+        
+        manusAI.track('chat_bot_response', {
+          category: 'engagement',
+          label: 'bot_message',
+          response_length: response.length
+        });
+      }, 1000 + Math.random() * 2000); // Variable response time for realism
+    }
+    
+    function addChatMessage(message, sender) {
+      const chatMessages = document.getElementById('chat-messages');
+      const messageDiv = document.createElement('div');
+      messageDiv.className = `mb-3 ${sender === 'user' ? 'text-right' : 'text-left'}`;
+      
+      const messageContent = document.createElement('div');
+      messageContent.className = `inline-block p-3 rounded-lg text-sm max-w-xs ${
+        sender === 'user' 
+          ? 'bg-[#00ffd1] text-black' 
+          : 'bg-gray-700 text-gray-100'
+      }`;
+      messageContent.textContent = message;
+      
+      messageDiv.appendChild(messageContent);
+      chatMessages.appendChild(messageDiv);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+      
+      // Store in chat history with enhanced metadata
+      chatHistory.push({ 
+        message, 
+        sender, 
+        timestamp: Date.now(),
+        sessionId: manusAI.getSessionId(),
+        userId: manusAI.getUserId()
+      });
+    }
+    
+    function handleChatKeypress(event) {
+      if (event.key === 'Enter') {
+        sendChatMessage();
+      }
+    }
+    
+    function calculateChatSessionDuration() {
+      if (chatHistory.length === 0) return 0;
+      const firstMessage = chatHistory[0];
+      const lastMessage = chatHistory[chatHistory.length - 1];
+      return lastMessage.timestamp - firstMessage.timestamp;
+    }
+    
+    function sendChatTranscript() {
+      if (chatHistory.length > 0) {
+        const transcriptData = {
+          transcript: chatHistory,
+          sessionId: manusAI.getSessionId(),
+          userId: manusAI.getUserId(),
+          sessionDuration: calculateChatSessionDuration(),
+          totalMessages: chatHistory.length,
+          userMessages: chatHistory.filter(m => m.sender === 'user').length,
+          botMessages: chatHistory.filter(m => m.sender === 'bot').length,
+          timestamp: Date.now(),
+          pageUrl: window.location.href
+        };
+        
+        manusAI.automate('send_chat_transcript', {
+          ...transcriptData,
+          email: 'support@sovereignattention.com' // Configure this email
+        });
+        
+        manusAI.track('chat_transcript_sent', {
+          category: 'automation',
+          label: 'chat_transcript',
+          message_count: chatHistory.length,
+          session_duration: calculateChatSessionDuration()
+        });
+      }
+    }
+
+    // Enhanced form handling with conversion tracking
+    function handleFormSubmission(event) {
+      const form = event.target;
+      const email = form.querySelector('input[type="email"]').value;
+      const submitButton = form.querySelector('button[type="submit"]');
+      const buttonText = submitButton.querySelector('.button-text');
+      const loadingIcon = submitButton.querySelector('.loading-icon');
+      
+      // Show loading state
+      submitButton.classList.add('loading');
+      buttonText.textContent = 'Processing...';
+      loadingIcon.classList.remove('hidden');
+      
+      // Enhanced conversion tracking
+      manusAI.track('form_submit', { 
+        category: 'conversion',
+        label: 'email_signup',
+        email_provided: !!email,
+        form_type: 'mailchimp_signup',
+        price: 7,
+        currency: 'USD',
+        conversion_source: 'landing_page'
+      });
+
+      // Google Analytics Enhanced Ecommerce
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'purchase', {
+          transaction_id: 'txn_' + Date.now(),
+          value: 7.00,
+          currency: 'USD',
+          items: [{
+            item_id: 'sovereign_attention_protocol',
+            item_name: 'The Sovereign Attention Protocol',
+            category: 'digital_guide',
+            price: 7.00,
+            quantity: 1
+          }]
+        });
+      }
+      
+      // Trigger enhanced automation
+      manusAI.automate('send_guide', { 
+        email: email,
+        product: 'sovereign_attention_protocol',
+        price: 7,
+        currency: 'USD',
+        form_id: form.id,
+        conversion_source: 'landing_page',
+        user_agent: navigator.userAgent,
+        referrer: document.referrer
+      });
+      
+      // Reset form state after delay
+      setTimeout(() => {
+        submitButton.classList.remove('loading');
+        buttonText.textContent = 'Thank You!';
+        loadingIcon.classList.add('hidden');
+        
+        // Show success message
+        manusAI.track('form_submit_success', {
+          category: 'conversion',
+          label: 'email_signup_success'
+        });
+        
+        setTimeout(() => {
+          buttonText.textContent = 'Send My Reset!';
+        }, 3000);
+      }, 2000);
+    }
+
+    // Page initialization with enhanced tracking
+    document.addEventListener('DOMContentLoaded', function() {
+      // Hide loading screen
+      setTimeout(() => {
+        document.getElementById('page-loader').style.display = 'none';
+        document.body.style.overflow = 'visible';
+        
+        manusAI.track('page_loaded', {
+          category: 'performance',
+          label: 'page_fully_loaded',
+          load_time: Date.now() - performance.timing.navigationStart
+        });
+      }, 1000);
+      
+      // Setup intersection observer for section animations
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            
+            // Track section views
+            const sectionTitle = entry.target.querySelector('h3');
+            if (sectionTitle) {
+              manusAI.track('section_view', {
+                category: 'engagement',
+                label: sectionTitle.textContent.toLowerCase().replace(/\s+/g, '_'),
+                section_title: sectionTitle.textContent
+              });
+            }
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.section-animate').forEach(section => {
+        observer.observe(section);
+      });
+
+      // Enhanced form submission handling
+      const form = document.getElementById('mc-embedded-subscribe-form');
+      if (form) {
+        form.addEventListener('submit', handleFormSubmission);
+      }
+    });
+
+    // Close modal when clicking outside
+    document.addEventListener('click', function(event) {
+      const modal = document.getElementById('manus-ai-modal');
+      if (event.target === modal) {
+        closeChat();
+      }
+    });
+
+    // Enhanced keyboard accessibility
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeChat();
+      }
+    });
+
+    // Track page visibility changes
+    document.addEventListener('visibilitychange', function() {
+      if (document.hidden) {
+        manusAI.track('page_hidden', {
+          category: 'engagement',
+          label: 'tab_hidden',
+          time_on_page: Date.now() - performance.timing.navigationStart
+        });
+      } else {
+        manusAI.track('page_visible', {
+          category: 'engagement',
+          label: 'tab_visible'
+        });
+      }
+    });
+
+    // Track page unload
+    window.addEventListener('beforeunload', function() {
+      manusAI.track('page_unload', {
+        category: 'engagement',
+        label: 'page_exit',
+        time_on_page: Date.now() - performance.timing.navigationStart
+      });
+    });
+  </script>
+  
+  <!-- YouTube API for enhanced video tracking -->
+  <script src="https://www.youtube.com/iframe_api"></script>
+</body>
+</html>
+
